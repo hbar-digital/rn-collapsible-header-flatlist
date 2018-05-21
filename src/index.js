@@ -10,11 +10,15 @@ const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 export default class CollapsibleHeaderFlatList extends Component {
   _scrollPosition = new Animated.Value(0);
 
-  _onScroll = Animated.event([{ nativeEvent: { contentOffset: { y: this._scrollPosition } } }], {
-    useNativeDriver: true
-  });
-
   state = { y: 0, headerPositions: {} };
+
+  constructor(props) {
+    super(props);
+
+    _onScroll = Animated.event([{ nativeEvent: { contentOffset: { y: this._scrollPosition } } }], {
+      useNativeDriver: props.useNativeDriver ? props.useNativeDriver : true
+    });
+  }
 
   _onLayout = () => {
     this._container.measure((x, y, width, height, pageX, pageY) => {

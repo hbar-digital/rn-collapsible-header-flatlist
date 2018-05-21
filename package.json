@@ -1,6 +1,6 @@
 {
   "name": "rn-collapsible-header-flatlist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native FlatList component with animated collapsible headers",
   "main": "src/index.js",
   "scripts": {
