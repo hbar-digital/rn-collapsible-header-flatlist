@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Animated, FlatList, UIManager, findNodeHandle, Text, View } from 'react-native';
+import { Animated } from 'react-native';
 
 export default class CollapsibleHeader extends Component {
   state = { y: 0, height: 0 };
