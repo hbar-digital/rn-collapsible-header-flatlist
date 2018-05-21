@@ -15,9 +15,12 @@ export default class CollapsibleHeaderFlatList extends Component {
   constructor(props) {
     super(props);
 
-    _onScroll = Animated.event([{ nativeEvent: { contentOffset: { y: this._scrollPosition } } }], {
-      useNativeDriver: props.useNativeDriver ? props.useNativeDriver : true
-    });
+    let { useNativeDriver = true } = props;
+
+    this._onScroll = Animated.event(
+      [{ nativeEvent: { contentOffset: { y: this._scrollPosition } } }],
+      { useNativeDriver }
+    );
   }
 
   _onLayout = () => {
